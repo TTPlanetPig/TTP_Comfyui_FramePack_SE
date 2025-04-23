@@ -32,6 +32,7 @@ https://github.com/lllyasviel/FramePack
 
 - **Tweaked the generation pipeline code** to strike a balance between variation and frame consistency  
 - Tested and tuned several parameters to ensure smooth transitions in most scenarios
+- The comfyui code is referred from [HM-RunningHub/ComfyUI_RH_FramePack](https://github.com/HM-RunningHub/ComfyUI_RH_FramePack) and modified
 
 
 <div style="display:flex; align-items:center; max-width:900px; margin:auto; border:1px solid #ddd;">
