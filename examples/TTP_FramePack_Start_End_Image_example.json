@@ -1,0 +1,305 @@
+{
+  "id": "80657721-1df8-4e52-abda-f0f1e37d5001",
+  "revision": 0,
+  "last_node_id": 34,
+  "last_link_id": 61,
+  "nodes": [
+    {
+      "id": 15,
+      "type": "LoadImage",
+      "pos": [
+        1623.009765625,
+        21.022281646728516
+      ],
+      "size": [
+        467.89154052734375,
+        535.3126220703125
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            60
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "title": "Load Start Image",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "rem_a_all1_1024x.jpg",
+        "image",
+        ""
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        1621.7667236328125,
+        623.1624755859375
+      ],
+      "size": [
+        467.89154052734375,
+        535.3126220703125
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            61
+          ]
+        },
+        {
+          "label": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1
+        }
+      ],
+      "title": "Load End Image",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.28",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "rem_a_rear1_1024x.jpg",
+        "image",
+        ""
+      ]
+    },
+    {
+      "id": 3,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        2874.755615234375,
+        60.97808074951172
+      ],
+      "size": [
+        440.9539489746094,
+        979.430908203125
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "images",
+          "name": "images",
+          "type": "IMAGE",
+          "link": 58
+        },
+        {
+          "label": "audio",
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO"
+        },
+        {
+          "label": "meta_batch",
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager"
+        },
+        {
+          "label": "vae",
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE"
+        },
+        {
+          "label": "frame_rate",
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 59
+        }
+      ],
+      "outputs": [
+        {
+          "label": "Filenames",
+          "name": "Filenames",
+          "type": "VHS_FILENAMES"
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "df55f01d1df2f7bf5cc772294bc2e6d8bab22d66",
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "TTP_FramePack_SE",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "paused": false,
+          "hidden": false,
+          "params": {
+            "filename": "TTP_FramePack_SE_00005.mp4",
+            "workflow": "TTP_FramePack_SE_00005.png",
+            "fullpath": "I:\\ComfyUI_windows_portable\\ComfyUI\\output\\TTP_FramePack_SE_00005.mp4",
+            "format": "video/h264-mp4",
+            "subfolder": "",
+            "type": "output",
+            "frame_rate": 30
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 34,
+      "type": "TTPlanet_FramePack",
+      "pos": [
+        2306.0751953125,
+        333.59417724609375
+      ],
+      "size": [
+        400,
+        516
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ref_image",
+          "type": "IMAGE",
+          "link": 60
+        },
+        {
+          "name": "end_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 61
+        }
+      ],
+      "outputs": [
+        {
+          "name": "frames",
+          "type": "IMAGE",
+          "links": [
+            58
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            59
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "TTPlanet_FramePack"
+      },
+      "widgets_values": [
+        "the figure rotate from front to the back",
+        5,
+        244414694386418,
+        "randomize",
+        25,
+        true,
+        "480p",
+        "optimized",
+        1,
+        true,
+        1,
+        0.10000000000000002,
+        0.5000000000000001,
+        6,
+        false,
+        true,
+        33,
+        "linear"
+      ]
+    }
+  ],
+  "links": [
+    [
+      58,
+      34,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      59,
+      34,
+      1,
+      3,
+      4,
+      "FLOAT"
+    ],
+    [
+      60,
+      15,
+      0,
+      34,
+      0,
+      "IMAGE"
+    ],
+    [
+      61,
+      2,
+      0,
+      34,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.8797616762370473,
+      "offset": [
+        -1743.8716274582243,
+        -110.4610442951012
+      ]
+    },
+    "ue_links": [],
+    "0246.VERSION": [
+      0,
+      0,
+      4
+    ],
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
