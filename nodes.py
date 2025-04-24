@@ -32,7 +32,7 @@ import comfy.utils
 from PIL import Image
 import folder_paths
 
-class Kiki_FramePack:
+class SE_FramePack:
     @classmethod
     def INPUT_TYPES(s):
         return {
@@ -677,7 +677,7 @@ class Kiki_FramePack:
         return info['video_fps']
 
 NODE_CLASS_MAPPINGS = {
-    "TTPlanet_FramePack": Kiki_FramePack,
+    "TTPlanet_FramePack": SE_FramePack,
 }
 
 def soft_append_bcthw(history, current, overlap=0, blend_mode='linear'):
