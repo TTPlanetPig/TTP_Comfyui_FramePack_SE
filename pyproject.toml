@@ -1,0 +1,15 @@
+[project]
+name = "ttp_comfyui_framepack_se"
+description = "Provide ComfyUI support for FramePack start-and-end image reference"
+version = "1.0.0"
+license = {file = "LICENSE"}
+dependencies = ["accelerate>=1.6.0", "diffusers>=0.33.1", "transformers>=4.46.2", "scipy>=1.12.0", "torchsde>=0.2.6", "einops", "safetensors"]
+
+[project.urls]
+Repository = "https://github.com/TTPlanetPig/TTP_Comfyui_FramePack_SE"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "TTP_Comfyui_FramePack_SE"
+Icon = ""
